@@ -16,7 +16,7 @@ export default forwardRef(function Section2(props, ref) {
           <img
             className='rounded-lg bg-center bg-contain  m-auto  '
             src={ProgramingImage}
-            alt='programing image'
+            alt='programing imagee'
           />
         </div>
       </div>
