@@ -16,7 +16,7 @@ function App() {
 
    const HandleClick = () => {
      console.log(ref1);
-     ref1.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+     ref1.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
    };
 
    const HandleClickPortfolio = () => {

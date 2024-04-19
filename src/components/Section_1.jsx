@@ -8,7 +8,7 @@ export default function Section_1() {
       <div className='grid grid-cols-1 md:absolute  md:grid-cols-2 h-full  rounded-full items-center'>
         <div className='md:flex md:justify-end md:mr-10 mt-5 md:mt-0 w-4/6  h-full m-auto'>
           <img
-            className='shape bg-transparent rounded-full  m-auto'
+            className='shape bg-transparent rounded-full   m-auto'
             src={profilePic}
             alt='profile pic'
           ></img>

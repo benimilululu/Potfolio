@@ -3,10 +3,16 @@ import { forwardRef } from 'react';
 
 import ProgramingImage from '../images/coding.jpeg';
 import Restourant from '../images/ReastorantApp.png';
+import sellTradeWeb from '../images/sell:tradeWeb.png'
+import sellTradeTel from '../images/sell:tradeTe.png';
 
 export default forwardRef(function Section3(props, ref) {
   const handleClick = () => {
     window.open('https://www.youtube.com/watch?v=cQR3nHvMDRE', '_blank');
+  };
+
+  const handleClickApp = () => {
+    window.open('https://sell-trade-web-app-4324.vercel.app', '_blank');
   };
 
   return (
@@ -18,6 +24,41 @@ export default forwardRef(function Section3(props, ref) {
         PORTFOLIO
       </p>
       <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:w-5/6 gap-4  border-2   rounded-lg shadow-xl items-center m-2'>
+        <div className='m-4'>
+          <p className='text-xl '>Buy / Sell / Chat - App</p>
+          <p className='pt-3 text-base'>
+            Welcome to our app, where fashion meets convenience! With our
+            user-friendly platform, you can effortlessly buy and sell a wide
+            range of stylish clothing, shoes, and accessories. Whether you're
+            looking to refresh your wardrobe or declutter your closet, our app
+            offers a seamless experience for both buyers and sellers.
+          </p>
+          <button
+            className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+            onClick={handleClickApp}
+          >
+            Click here to visit site
+          </button>
+        </div>
+        <div className='grid grid-cols-1'>
+          <img
+            className='size-contain p-4'
+            src={sellTradeWeb}
+            alt='sell/trade app'
+          />
+          <img
+            className='size-96 object-contain p-4'
+            src={sellTradeTel}
+            alt='sell/trade app'
+          />
+        </div>
+      </div>
+      <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:w-5/6  md:mt-4 gap-4  border-2   rounded-lg shadow-xl items-center m-2'>
+        <img
+          className='rounded-lg size-contain p-4'
+          src={Restourant}
+          alt='restourant app'
+        />
         <div className='m-4'>
           <p className='text-xl '>Restaurant System</p>
           <p className='pt-3 text-base'>
@@ -32,29 +73,6 @@ export default forwardRef(function Section3(props, ref) {
             Click to watch it on YouTube
           </button>
         </div>
-        <img
-          className='rounded-lg size-full p-4'
-          src={Restourant}
-          alt='restourant app'
-        />
-      </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:mt-4 md:w-5/6 border-2    rounded-lg mt-4 shadow-xl items-center m-2'>
-        <div className='m-4 '>
-          <p className='text-xl '>Construction Company Website</p>
-          <p className='pt-3 text-base'>
-            Website made for Construction Company where you can see what they
-            are offering also why you need to chose them and where are they
-            based.
-          </p>
-          <button className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>
-            Click for more details
-          </button>
-        </div>
-        <img
-          className='rounded-lg size-40 m-auto mb-5'
-          src={ProgramingImage}
-          alt='programing'
-        />
       </div>
     </div>
   );
