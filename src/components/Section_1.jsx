@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
 import profilePic from '../images/filip.jpeg';
 
-
 export default function Section_1() {
+  const smallTextAboutMe =
+    'Hi. I am Martin Jovanovic. Passionate Front-end React Developer based in Skopje, North Macedonia. 📍';
+
   return (
     <div className='relative md:h-[55vh] cursor-default '>
       <div className='grid grid-cols-1 md:absolute  md:grid-cols-2 h-full  rounded-full items-center'>
@@ -18,10 +20,7 @@ export default function Section_1() {
             <p className=''>Front-End</p>
             <p className='whitespace-nowrap pt-4 static'>JavaScript / React</p>
             <p className='pt-4 static'>Developer</p>
-            <p className='text-xl pt-10 static'>
-              Hi. I am Martin Jovanovic. Passionate Front-end React Developer
-              based in Skopje, North Macedonia. 📍
-            </p>
+            <p className='text-xl pt-10 static'>{smallTextAboutMe}</p>
           </div>
         </div>
       </div>

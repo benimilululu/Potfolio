@@ -9,7 +9,7 @@ export default forwardRef(function Section2(props, ref) {
     <div className='section2 pb-10 m-2' ref={ref}>
       <div className='flex-col md:grid md:grid-cols-2 m-auto place-items-center  md:w-[95vh] m-x-auto mt-20 rounded-lg shadow-2xl border-4'>
         <div className='m-6 font-bold'>
-          <p className='text-2xl text-white'>ABOUT ME</p>
+          <p className='text-2xl text-white border-b-4 w-fit m-auto'>ABOUT ME</p>
           <p className='pt-10 pb-10 text-white text-xl pr-4'>{TextAboutMe}</p>
         </div>
         <div className='md:m-2'>

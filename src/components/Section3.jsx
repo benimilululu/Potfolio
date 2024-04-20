@@ -7,6 +7,10 @@ import sellTradeWeb from '../images/sell:tradeWeb.png'
 import sellTradeTel from '../images/sell:tradeTe.png';
 
 export default forwardRef(function Section3(props, ref) {
+  const restaurantAppText = 'Restaurant System for GTA 5 roleplay where you can get order and the orders are going in the kitchen where the chef is viewing and making the order. This if Full Stack based application with back-end MySQL.'
+
+  const topFindAppText = `Welcome to our app, where fashion meets convenience! With our user-friendly platform, you can effortlessly buy and sell a wide range of stylish clothing, shoes, and accessories. Whether you're looking to refresh your wardrobe or declutter your closet, our app offers a seamless experience for both buyers and sellers.`
+
   const handleClick = () => {
     window.open('https://www.youtube.com/watch?v=cQR3nHvMDRE', '_blank');
   };
@@ -25,13 +29,11 @@ export default forwardRef(function Section3(props, ref) {
       </p>
       <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:w-5/6 gap-4  border-2   rounded-lg shadow-xl items-center m-2'>
         <div className='m-4'>
-          <p className='text-xl '>Buy / Sell / Chat - App</p>
+          <p className='text-xl border-b-4 w-fit m-auto'>
+            Buy / Sell / Chat - App
+          </p>
           <p className='pt-3 text-base'>
-            Welcome to our app, where fashion meets convenience! With our
-            user-friendly platform, you can effortlessly buy and sell a wide
-            range of stylish clothing, shoes, and accessories. Whether you're
-            looking to refresh your wardrobe or declutter your closet, our app
-            offers a seamless experience for both buyers and sellers.
+            {topFindAppText}
           </p>
           <button
             className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
@@ -60,11 +62,9 @@ export default forwardRef(function Section3(props, ref) {
           alt='restourant app'
         />
         <div className='m-4'>
-          <p className='text-xl '>Restaurant System</p>
+          <p className='text-xl border-b-4 w-fit m-auto'>Restaurant System</p>
           <p className='pt-3 text-base'>
-            Restaurant System for GTA 5 roleplay where you can get order and the
-            orders are going in the kitchen where the chef is viewing and making
-            the order. This if Full Stack based application with back-end MySQL.
+            {restaurantAppText}
           </p>
           <button
             className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
