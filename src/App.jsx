@@ -1,33 +1,36 @@
-import { useState } from 'react'
-import './App.css'
-import TechStack from './components/TechStack'
-import Section2 from './components/Section2'
-import Section3 from './components/Section3'
-import Contact from './components/Contact'
+import { useState } from 'react';
+import './App.css';
+import TechStack from './components/TechStack';
+import Section2 from './components/Section2';
+import Section3 from './components/Section3';
+import Contact from './components/Contact';
 
 import { useRef } from 'react';
-import Header from './components/Header'
-import Section_1 from './components/Section_1'
+import Header from './components/Header';
+import Section_1 from './components/Section_1';
 
 function App() {
-   const ref1 = useRef();
-   const ref2 = useRef();
-   const contactRef = useRef();
+  const ref1 = useRef();
+  const ref2 = useRef();
+  const contactRef = useRef();
 
-   const HandleClick = () => {
-     console.log(ref1);
-     ref1.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-   };
+  const HandleClick = (e) => {
+    console.log(ref1);
+    ref1.current?.scrollIntoView({
+      behavior: 'smooth',
+  
+    });
+  };
 
-   const HandleClickPortfolio = () => {
-     console.log(ref2);
-     ref2.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-   };
+  const HandleClickPortfolio = () => {
+    console.log(ref2);
+    ref2.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
-   const HandleClickContact = () => {
-     console.log(contactRef);
-     contactRef.current?.scrollIntoView({ behavior: 'smooth' });
-   };
+  const HandleClickContact = () => {
+    console.log(contactRef);
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -47,4 +50,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
