@@ -1,5 +1,6 @@
 import React from 'react';
 import profilePic from '../images/filip.jpeg';
+import snowProfilePic from '../images/FA18D6FF-6285-43E5-A6CA-58F1375CCF02.jpeg'
 
 export default function Section_1() {
   const smallTextAboutMe =
@@ -11,7 +12,7 @@ export default function Section_1() {
         <div className='md:flex md:justify-end md:mr-10 mt-5 md:mt-0 w-4/6  h-full m-auto'>
           <img
             className='shape bg-transparent rounded-full object-cover  m-auto'
-            src={profilePic}
+            src={snowProfilePic}
             alt='profile pic'
           ></img>
         </div>

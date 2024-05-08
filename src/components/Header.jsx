@@ -1,16 +1,9 @@
 import React, { useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
-import { useMediaQuery } from 'react-responsive';
-
 export default function Header(props) {
-
-
-    const isSmallScreen = useMediaQuery({ maxWidth: 767 });
-
-
   const classNamesForNavBar =
-    'cursor-pointer text-2xl relative font-bold text-white md:after:bg-white md:after:absolute md:after:h-1 md:after:w-0 md:after:bottom-0 md:after:left-0 md:hover:after:w-full md:after:transition-all md:after:duration-300 md:font-bold md:text-white';
+    'cursor-pointer md:border-0 text-xl md:text-2xl border-r relative font-bold text-white md:after:bg-white md:after:absolute md:after:h-1 md:after:w-0 md:after:bottom-0 md:after:left-0 md:hover:after:w-full md:after:transition-all md:after:duration-300 md:font-bold md:text-white';
 
   const notifySuccess = () =>
     toast('Hi There.', {
@@ -36,7 +29,7 @@ export default function Header(props) {
           <p className={classNamesForNavBar} onClick={props.PortfolioHandler}>
             Portfolio
           </p>
-          <p className={classNamesForNavBar} onClick={props.ContactHandler}>
+          <p className={`${classNamesForNavBar} border-r-0`} onClick={props.ContactHandler}>
             Contact
           </p>
         </div>
