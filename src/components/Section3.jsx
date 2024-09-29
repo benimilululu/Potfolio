@@ -1,5 +1,5 @@
 import React from 'react';
-import { forwardRef } from 'react';
+import { forwardRef, useState, useEffect } from 'react';
 
 import ProgramingImage from '../images/coding.jpeg';
 import Restourant from '../images/ReastorantApp.png';
@@ -10,6 +10,33 @@ export default forwardRef(function Section3(props, ref) {
   const restaurantAppText = 'Restaurant System for GTA 5 roleplay where you can get order and the orders are going in the kitchen where the chef is viewing and making the order. This if Full Stack based application with back-end MySQL.'
 
   const topFindAppText = `Welcome to our app, where fashion meets convenience! With our user-friendly platform, you can effortlessly buy and sell a wide range of stylish clothing, shoes, and accessories. Whether you're looking to refresh your wardrobe or declutter your closet, our app offers a seamless experience for both buyers and sellers.`
+  const [isVisible, setIsVisible] = useState(false);
+
+  const divRef = ref;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (divRef.current) {
+      observer.observe(divRef.current);
+    }
+
+    return () => {
+      if (divRef.current) {
+        observer.unobserve(divRef.current);
+      }
+    };
+  }, []);
 
   const handleClick = () => {
     window.open('https://www.youtube.com/watch?v=cQR3nHvMDRE', '_blank');
@@ -21,7 +48,9 @@ export default forwardRef(function Section3(props, ref) {
 
   return (
     <div
-      className='pb-20 m-auto md:grid md:grid-cols-1 md:w-4/6  text-white font-bold'
+      className={`section3 pb-20 m-auto md:grid md:grid-cols-1 md:w-4/6  text-white font-bold ${
+        isVisible ? 'visible' : ''
+      }`}
       ref={ref}
     >
       <p className='w-full m-auto text-left text-3xl font-bold p-2'>
@@ -32,9 +61,7 @@ export default forwardRef(function Section3(props, ref) {
           <p className='text-xl border-b-4 w-fit m-auto'>
             Buy / Sell / Chat - App
           </p>
-          <p className='pt-3 text-base'>
-            {topFindAppText}
-          </p>
+          <p className='pt-3 text-base'>{topFindAppText}</p>
           <button
             className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
             onClick={handleClickApp}
@@ -63,9 +90,7 @@ export default forwardRef(function Section3(props, ref) {
         />
         <div className='m-4'>
           <p className='text-xl border-b-4 w-fit m-auto'>Restaurant System</p>
-          <p className='pt-3 text-base'>
-            {restaurantAppText}
-          </p>
+          <p className='pt-3 text-base'>{restaurantAppText}</p>
           <button
             className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
             onClick={handleClick}

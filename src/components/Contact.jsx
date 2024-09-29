@@ -1,21 +1,51 @@
-import { forwardRef } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 
 import { FaPhoneAlt } from 'react-icons/fa';
 import { TfiEmail } from 'react-icons/tfi';
 
 export default forwardRef(function Contact(props, ref) {
+  const [isVisible, setIsVisible] = useState(false);
+  
   const fullName = 'Martin Jovanovic';
   const phoneNumber = '+389 78 20 21 22';
   const email = 'jovanovik.martin2@gmail.com';
 
+    const divRef = ref;
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          } else {
+            setIsVisible(false);
+          }
+        },
+        { threshold: 0.3 }
+      );
+
+      if (divRef.current) {
+        observer.observe(divRef.current);
+      }
+
+      return () => {
+        if (divRef.current) {
+          observer.unobserve(divRef.current);
+        }
+      };
+    }, []);
+
   return (
     <div
-      className='pb-10 font-bold text-white mx-2 md:grid md:grid-cols-1 md:w-4/6 md:m-auto'
+      className={`contact pb-10 font-bold text-white mx-2 md:grid md:grid-cols-1 md:w-4/6 md:m-auto ${
+        isVisible ? 'visible' : ''
+      }`}
       ref={ref}
     >
       <p className='text-3xl font-bold text-left '>GET IN TOUCH</p>
       <div className='box = mt-4 rounded-lg border-2 md:w-5/6 md:m-auto md:mt-4'>
-        <div className='content mt-2'>
+        <div className='content mt-2 p-5'>
           <p className='border-b-4 w-fit m-auto mb-2'>Contact info</p>
           <p className='text-2xl'>{fullName}</p>
           <div className='flex justify-center'>
@@ -28,7 +58,7 @@ export default forwardRef(function Contact(props, ref) {
             </a>
           </div>
           <div className='flex  justify-center'>
-            <TfiEmail className=' transform translate-y-1/2 text-xl ' />
+            <TfiEmail className=' transform translate-y-1/2 text-3xl ' />
             <EmailLink
               email={email}
               subject='Inquiry'

@@ -185,3 +185,39 @@ code {
   --c1: rgba(168, 239, 255, 1);
   --c2: rgba(168, 239, 255, 0.1);
 }
+
+.section2 {
+  opacity: 0;
+  /* transform: translateY(50px); */
+  transition: opacity 1s ease, transform 1s ease;
+} 
+
+
+.section2.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section3 {
+  opacity: 0;
+  /* transform: translateY(50px); */
+  transition: opacity 1s ease, transform 1s ease;
+} 
+
+
+.section3.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact {
+  opacity: 0;
+  /* transform: translateY(50px); */
+  transition: opacity 1s ease, transform 1s ease;
+} 
+
+
+.contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
