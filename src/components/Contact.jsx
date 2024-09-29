@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { forwardRef } from 'react';
 
 import { FaPhoneAlt } from 'react-icons/fa';
@@ -7,7 +6,7 @@ import { TfiEmail } from 'react-icons/tfi';
 export default forwardRef(function Contact(props, ref) {
   const fullName = 'Martin Jovanovic';
   const phoneNumber = '+389 78 20 21 22';
-  const email = 'jovanovik.martin2@yahoo.com';
+  const email = 'jovanovik.martin2@gmail.com';
 
   return (
     <div
