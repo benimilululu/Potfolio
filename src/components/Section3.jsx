@@ -1,42 +1,19 @@
-import React from 'react';
-import { forwardRef, useState, useEffect } from 'react';
+import { forwardRef, useState } from 'react';
 
-import ProgramingImage from '../images/coding.jpeg';
 import Restourant from '../images/ReastorantApp.png';
-import sellTradeWeb from '../images/sell:tradeWeb.png'
+import sellTradeWeb from '../images/sell:tradeWeb.png';
 import sellTradeTel from '../images/sell:tradeTe.png';
 
-export default forwardRef(function Section3(props, ref) {
-  const restaurantAppText = 'Restaurant System for GTA 5 roleplay where you can get order and the orders are going in the kitchen where the chef is viewing and making the order. This if Full Stack based application with back-end MySQL.'
+import { ShowingDiv } from '../functions/showingDiv';
 
-  const topFindAppText = `Welcome to our app, where fashion meets convenience! With our user-friendly platform, you can effortlessly buy and sell a wide range of stylish clothing, shoes, and accessories. Whether you're looking to refresh your wardrobe or declutter your closet, our app offers a seamless experience for both buyers and sellers.`
+export default forwardRef(function Section3(props, ref) {
+  const restaurantAppText =
+    'Restaurant System for GTA 5 roleplay where you can get order and the orders are going in the kitchen where the chef is viewing and making the order. This if Full Stack based application with back-end MySQL.';
+
+  const topFindAppText = `Welcome to our app, where fashion meets convenience! With our user-friendly platform, you can effortlessly buy and sell a wide range of stylish clothing, shoes, and accessories. Whether you're looking to refresh your wardrobe or declutter your closet, our app offers a seamless experience for both buyers and sellers.`;
   const [isVisible, setIsVisible] = useState(false);
 
-  const divRef = ref;
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (divRef.current) {
-      observer.observe(divRef.current);
-    }
-
-    return () => {
-      if (divRef.current) {
-        observer.unobserve(divRef.current);
-      }
-    };
-  }, []);
+  ShowingDiv(ref, setIsVisible);
 
   const handleClick = () => {
     window.open('https://www.youtube.com/watch?v=cQR3nHvMDRE', '_blank');

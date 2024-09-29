@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import './App.css';
 import TechStack from './components/TechStack';
 import Section2 from './components/Section2';
 import Section3 from './components/Section3';
 import Contact from './components/Contact';
 
-import { useRef, useEffect } from 'react';
+import { useRef} from 'react';
 import Header from './components/Header';
 import Section_1 from './components/Section_1';
 
@@ -15,7 +14,7 @@ function App() {
   const contactRef = useRef();
   
 
-  const HandleClick = (e) => {
+  const HandleClick = () => {
     console.log(ref1);
     ref1.current?.scrollIntoView({
       behavior: 'smooth',

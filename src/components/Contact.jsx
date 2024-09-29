@@ -1,40 +1,15 @@
-import { forwardRef, useEffect, useState } from 'react';
-
-import { FaPhoneAlt } from 'react-icons/fa';
+import { forwardRef, useState } from 'react';
 import { TfiEmail } from 'react-icons/tfi';
+
+import { ShowingDiv } from '../functions/showingDiv';
 
 export default forwardRef(function Contact(props, ref) {
   const [isVisible, setIsVisible] = useState(false);
-  
+
   const fullName = 'Martin Jovanovic';
-  const phoneNumber = '+389 78 20 21 22';
   const email = 'jovanovik.martin2@gmail.com';
 
-    const divRef = ref;
-
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.disconnect();
-          } else {
-            setIsVisible(false);
-          }
-        },
-        { threshold: 0.3 }
-      );
-
-      if (divRef.current) {
-        observer.observe(divRef.current);
-      }
-
-      return () => {
-        if (divRef.current) {
-          observer.unobserve(divRef.current);
-        }
-      };
-    }, []);
+  ShowingDiv(ref, setIsVisible);
 
   return (
     <div
@@ -48,15 +23,6 @@ export default forwardRef(function Contact(props, ref) {
         <div className='content mt-2 p-5'>
           <p className='border-b-4 w-fit m-auto mb-2'>Contact info</p>
           <p className='text-2xl'>{fullName}</p>
-          <div className='flex justify-center'>
-            <FaPhoneAlt className='transform translate-y-1/2 text-2xl mr-3' />
-            <a
-              href={`tel:${phoneNumber}`}
-              className='text-xl text-white pt-3 content-end border-b-2'
-            >
-              Phone : {phoneNumber}
-            </a>
-          </div>
           <div className='flex  justify-center'>
             <TfiEmail className=' transform translate-y-1/2 text-xl ' />
             <EmailLink
