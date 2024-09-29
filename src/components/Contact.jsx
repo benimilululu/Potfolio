@@ -58,7 +58,7 @@ export default forwardRef(function Contact(props, ref) {
             </a>
           </div>
           <div className='flex  justify-center'>
-            <TfiEmail className=' transform translate-y-1/2 text-3xl ' />
+            <TfiEmail className=' transform translate-y-1/2 text-xl ' />
             <EmailLink
               email={email}
               subject='Inquiry'
