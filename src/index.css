@@ -238,7 +238,7 @@ code {
   height: 31vmin;
   position: relative;
   width: 45vmin;
-  text-align: start;
+  text-align: center;
 }
 
 @media only screen and (max-width: 640px) { 
@@ -256,13 +256,13 @@ code {
 .animated-title > div div {
   font-size: 5vmin;
   padding: 1vmin 0;
-  position: absolute;
+  /* position: absolute; */
 }
 .animated-title > div div span {
   display: block;
 }
 .animated-title > div.text-top {
-  border-bottom: 0.5vmin solid #ffffff;
+  border-bottom: 0.6vmin solid #ffffff;
   top: 0;
 }
 .animated-title > div.text-top div {
