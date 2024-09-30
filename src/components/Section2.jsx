@@ -14,12 +14,12 @@ ShowingDiv(ref, setIsVisible);
       className={`section2 pb-10 m-2 ${isVisible ? 'visible' : ''}`}
       ref={ref}
     >
-      <div className='flex-col md:grid md:grid-cols-2 m-auto place-items-center  md:w-[95vh] m-x-auto mt-20 rounded-lg shadow-2xl border-4'>
+      <div className='flex-col md:grid md:grid-cols-2 m-auto place-items-center  md:w-[105vh] m-x-auto mt-20 rounded-lg shadow-2xl border-4'>
         <div className='m-6 font-bold'>
-          <p className='text-2xl text-white border-b-4 w-fit m-auto'>
+          <p className='text-3xl text-white border-b-4 w-fit m-auto'>
             ABOUT ME
           </p>
-          <p className='pt-10 pb-10 text-white text-xl pr-4'>{TextAboutMe}</p>
+          <p className='pt-10 pb-10 text-white text-2xl pr-4'>{TextAboutMe}</p>
         </div>
         <div className='md:m-2'>
           <img

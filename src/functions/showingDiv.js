@@ -12,7 +12,7 @@ useEffect(() => {
         setIsVisible(false);
       }
     },
-    { threshold: 0.3 }
+    { threshold: 0.1 }
   );
 
   if (divRef.current) {

@@ -33,12 +33,12 @@ export default forwardRef(function Section3(props, ref) {
       <p className='w-full m-auto text-left text-3xl font-bold p-2'>
         PORTFOLIO
       </p>
-      <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:w-5/6 gap-4  border-2   rounded-lg shadow-xl items-center m-2'>
+      <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:w-5/6 gap-4  border-4   rounded-lg shadow-xl items-center m-2'>
         <div className='m-4'>
-          <p className='text-xl border-b-4 w-fit m-auto'>
+          <p className='text-3xl border-b-4 w-fit m-auto'>
             Buy / Sell / Chat - App
           </p>
-          <p className='pt-3 text-base'>{topFindAppText}</p>
+          <p className='pt-6 text-2xl'>{topFindAppText}</p>
           <button
             className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
             onClick={handleClickApp}
@@ -59,15 +59,15 @@ export default forwardRef(function Section3(props, ref) {
           />
         </div>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:w-5/6  md:mt-4 gap-4  border-2   rounded-lg shadow-xl items-center m-2'>
+      <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:w-5/6  md:mt-4 gap-4  border-4   rounded-lg shadow-xl items-center m-2'>
         <img
           className='rounded-lg size-contain p-4'
           src={Restourant}
           alt='restourant app'
         />
         <div className='m-4'>
-          <p className='text-xl border-b-4 w-fit m-auto'>Restaurant System</p>
-          <p className='pt-3 text-base'>{restaurantAppText}</p>
+          <p className='text-3xl border-b-4 w-fit m-auto'>Restaurant System</p>
+          <p className='pt-3 text-2xl'>{restaurantAppText}</p>
           <button
             className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
             onClick={handleClick}

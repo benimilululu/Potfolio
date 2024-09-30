@@ -3,7 +3,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 export default function Header(props) {
   const classNamesForNavBar =
-    'cursor-pointer md:border-0 text-xl md:text-2xl border-r relative font-bold text-white md:after:bg-white md:after:absolute md:after:h-1 md:after:w-0 md:after:bottom-0 md:after:left-0 md:hover:after:w-full md:after:transition-all md:after:duration-300 md:font-bold md:text-white';
+    'cursor-pointer md:border-0 text-xl md:text-2xl border-r relative font-bold text-white md:after:bg-white md:after:absolute md:after:h-1 md:after:w-0 md:after:bottom-0 md:after:left-0 md:hover:after:w-full md:after:transition-all md:after:duration-300 md:font-bold md:text-white'; ;
 
   const notifySuccess = () =>
     toast('Hi There.', {
@@ -23,7 +23,7 @@ export default function Header(props) {
           </p>
         </div>
         <div className=' md:float-right md:flex md:space-x-4 grid grid-cols-3 mt-4'>
-          <p className={classNamesForNavBar} onClick={props.AboutMeHandler}>
+          <p className={`${classNamesForNavBar} `} onClick={props.AboutMeHandler}>
             About me
           </p>
           <p className={classNamesForNavBar} onClick={props.PortfolioHandler}>
