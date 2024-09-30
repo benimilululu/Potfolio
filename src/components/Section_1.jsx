@@ -18,10 +18,18 @@ export default function Section_1() {
         </div>
         <div className='md:flex md:justify-start text-4xl md:text-5xl pt-4 w-fit md:w-3/6 font-serif font-bold text-white mt-5 pb-10 md:mr-10'>
           <div>
-            <p className=''>Front-End</p>
-            <p className='whitespace-nowrap pt-4 static'>JavaScript / React</p>
-            <p className='pt-4 static'>Developer</p>
-            <p className='text-xl pt-10 static'>{smallTextAboutMe}</p>
+            <div className='animated-title m-auto'>
+              <div className='text-top'>
+                <div>
+                  <span className='text-white'>Front-End</span>
+                  <span className='mt-4'>JavaScript / React</span>
+                </div>
+              </div>
+              <div className='text-bottom'>
+                <div>Developer</div>
+              </div>
+            </div>
+            <p className='text-2xl  static'>{smallTextAboutMe}</p>
           </div>
         </div>
       </div>
