@@ -2,7 +2,7 @@ import { forwardRef, useState } from 'react';
 
 import Restourant from '../images/ReastorantApp.png';
 
-import sellTradeOnePic from '../images/3232.png'
+import sellTradeOnePic from '../images/3232-1.png'
 
 import { ShowingDiv } from '../functions/showingDiv';
 
