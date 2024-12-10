@@ -1,8 +1,8 @@
 import { forwardRef, useState } from 'react';
 
 import Restourant from '../images/ReastorantApp.png';
-import sellTradeWeb from '../images/sell:tradeWeb.png';
-import sellTradeTel from '../images/sell:tradeTe.png';
+
+import sellTradeOnePic from '../images/3232.png'
 
 import { ShowingDiv } from '../functions/showingDiv';
 
@@ -25,7 +25,7 @@ export default forwardRef(function Section3(props, ref) {
 
   return (
     <div
-      className={`section3 pb-20 m-auto md:grid md:grid-cols-1 md:w-4/6  text-white font-bold ${
+      className={`section3 pb-20 m-auto md:grid md:grid-cols-1 md:w-5/6  text-white font-bold ${
         isVisible ? 'visible' : ''
       }`}
       ref={ref}
@@ -49,12 +49,7 @@ export default forwardRef(function Section3(props, ref) {
         <div className='grid grid-cols-1'>
           <img
             className='size-contain p-4'
-            src={sellTradeWeb}
-            alt='sell/trade app'
-          />
-          <img
-            className='size-96 object-contain p-4'
-            src={sellTradeTel}
+            src={sellTradeOnePic}
             alt='sell/trade app'
           />
         </div>
