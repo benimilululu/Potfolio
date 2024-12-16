@@ -93,7 +93,7 @@ export default forwardRef(function Section3(props, ref) {
             className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
             onClick={handleClick}
           >
-            Click to watch it on YouTube
+            Click to watch YouTube tutorial
           </button>
         </div>
       </div>
