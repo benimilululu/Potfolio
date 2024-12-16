@@ -23,6 +23,14 @@ export default forwardRef(function Section3(props, ref) {
     window.open('https://sell-trade-web-app-4324.vercel.app', '_blank');
   };
 
+  const handleClickAppReactCode = () => {
+    window.open('https://github.com/benimilululu/Sell-TradeWebApp', '_blank');
+  };
+
+  const handleClickAppTSCode = () => {
+    window.open('https://github.com/benimilululu/tsBuySell', '_blank');
+  };
+
   return (
     <div
       className={`section3 pb-20 m-auto md:grid md:grid-cols-1 md:w-5/6  text-white font-bold ${
@@ -45,6 +53,24 @@ export default forwardRef(function Section3(props, ref) {
           >
             Click here to visit site
           </button>
+
+          <div>
+            <button
+              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+              onClick={handleClickAppReactCode}
+            >
+              Github React Code
+            </button>
+          </div>
+          <div>
+            <button
+              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+              onClick={handleClickAppTSCode}
+            >
+              Github Refactored TypeScript Code
+            </button>
+          </div>
+
         </div>
         <div className='grid grid-cols-1'>
           <img

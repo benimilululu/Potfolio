@@ -11,6 +11,10 @@ export default forwardRef(function Contact(props, ref) {
 
   ShowingDiv(ref, setIsVisible);
 
+   const handleClickGithubProfile = () => {
+     window.open('https://github.com/benimilululu', '_blank');
+   };
+
   return (
     <div
       className={`contact pb-10  font-bold text-white mx-2 md:grid md:grid-cols-1 md:w-4/6 md:m-auto ${
@@ -31,13 +35,21 @@ export default forwardRef(function Contact(props, ref) {
               body="Hello, I'm contacting you regarding..."
             />
           </div>
+          <div>
+            <button
+              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+              onClick={handleClickGithubProfile}
+            >
+              Github Profile
+            </button>
+          </div>
         </div>
       </div>
-      
     </div>
   );
 });
 
+// eslint-disable-next-line react/prop-types
 function EmailLink({ email, subject, body }) {
   const encodedSubject = encodeURIComponent(subject);
   const encodedBody = encodeURIComponent(body);
