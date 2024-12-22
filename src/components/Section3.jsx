@@ -123,7 +123,7 @@ export default forwardRef(function Section3(props, ref) {
       
      
       
-      <div className='p-10'></div>
+      <div className=''></div>
       <Timeline data={data} />
     </div>
   );
