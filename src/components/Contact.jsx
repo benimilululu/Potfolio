@@ -1,6 +1,7 @@
 import { forwardRef, useState } from 'react';
 import { TfiEmail } from 'react-icons/tfi';
 
+
 import { ShowingDiv } from '../functions/showingDiv';
 
 export default forwardRef(function Contact(props, ref) {
@@ -23,7 +24,7 @@ export default forwardRef(function Contact(props, ref) {
       ref={ref}
     >
       <p className='text-3xl font-bold text-left '>GET IN TOUCH</p>
-      <div className='box = mt-4 rounded-lg border-4 md:w-5/6 md:m-auto md:mt-4'>
+      <div className='box = mt-4 rounded-lg border-4 md:w-5/6 md:m-auto md:mt-4 backdrop-blur-lg'>
         <div className='content mt-2 p-5'>
           <p className='border-b-4 w-fit m-auto mb-2 text-2xl'>Contact info</p>
           <p className='text-3xl'>{fullName}</p>
@@ -65,3 +66,4 @@ function EmailLink({ email, subject, body }) {
     </a>
   );
 }
+

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { TiHtml5 } from 'react-icons/ti';
 import { FaCss3Alt } from 'react-icons/fa';
 import { SiJavascript } from 'react-icons/si';

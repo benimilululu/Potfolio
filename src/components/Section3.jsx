@@ -1,58 +1,52 @@
+'use client';
 import { forwardRef, useState } from 'react';
+
+import { Timeline } from '../ui/timeline';
 
 import Restourant from '../images/ReastorantApp.png';
 
-import sellTradeOnePic from '../images/3232-1.png'
+import sellTradeOnePic from '../images/3232-1.png';
 
 import { ShowingDiv } from '../functions/showingDiv';
 
-export default forwardRef(function Section3(props, ref) {
-  const restaurantAppText =
-    'Restaurant System for GTA 5 roleplay where you can get order and the orders are going in the kitchen where the chef is viewing and making the order. This if Full Stack based application with back-end MySQL.';
+const topFindAppText = `Welcome to our app, where fashion meets convenience! With our user-friendly platform, you can effortlessly buy and sell a wide range of stylish clothing, shoes, and accessories. Whether you're looking to refresh your wardrobe or declutter your closet, our app offers a seamless experience for both buyers and sellers.`;
 
-  const topFindAppText = `Welcome to our app, where fashion meets convenience! With our user-friendly platform, you can effortlessly buy and sell a wide range of stylish clothing, shoes, and accessories. Whether you're looking to refresh your wardrobe or declutter your closet, our app offers a seamless experience for both buyers and sellers.`;
-  const [isVisible, setIsVisible] = useState(false);
+const restaurantAppText =
+  'Restaurant System for GTA 5 roleplay where you can get order and the orders are going in the kitchen where the chef is viewing and making the order. This if Full Stack based application with back-end MySQL.';
 
-  ShowingDiv(ref, setIsVisible);
+const handleClick = () => {
+  window.open('https://www.youtube.com/watch?v=cQR3nHvMDRE', '_blank');
+};
 
-  const handleClick = () => {
-    window.open('https://www.youtube.com/watch?v=cQR3nHvMDRE', '_blank');
-  };
+const handleClickApp = () => {
+  window.open('https://sell-trade-web-app-4324.vercel.app', '_blank');
+};
 
-  const handleClickApp = () => {
-    window.open('https://sell-trade-web-app-4324.vercel.app', '_blank');
-  };
+const handleClickAppReactCode = () => {
+  window.open('https://github.com/benimilululu/Sell-TradeWebApp', '_blank');
+};
 
-  const handleClickAppReactCode = () => {
-    window.open('https://github.com/benimilululu/Sell-TradeWebApp', '_blank');
-  };
+const handleClickAppTSCode = () => {
+  window.open('https://github.com/benimilululu/tsBuySell', '_blank');
+};
 
-  const handleClickAppTSCode = () => {
-    window.open('https://github.com/benimilululu/tsBuySell', '_blank');
-  };
-
-  return (
-    <div
-      className={`section3 pb-20 m-auto md:grid md:grid-cols-1 md:w-5/6  text-white font-bold ${
-        isVisible ? 'visible' : ''
-      }`}
-      ref={ref}
-    >
-      <p className='w-full m-auto text-left text-3xl font-bold p-2'>
-        PORTFOLIO
-      </p>
-      <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:w-5/6 gap-4  border-4   rounded-lg shadow-xl items-center m-2'>
-        <div className='m-4'>
-          <p className='text-3xl border-b-4 w-fit m-auto'>
-            Buy / Sell / Chat - App
-          </p>
-          <p className='pt-6 text-2xl'>{topFindAppText}</p>
-          <button
-            className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
-            onClick={handleClickApp}
-          >
-            Click here to preview the website
-          </button>
+const data = [
+  {
+    title: 'Buy / Sell & Chat-App',
+    content: (
+      <div>
+        <p className='text-neutral-200 text-xs md:text-xl font-normal mb-8'>
+          {topFindAppText}
+        </p>
+        <div className='grid grid-cols-3'>
+          <div>
+            <button
+              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+              onClick={handleClickApp}
+            >
+              Click here to preview the website
+            </button>
+          </div>
 
           <div>
             <button
@@ -70,25 +64,29 @@ export default forwardRef(function Section3(props, ref) {
               Github Refactored TypeScript Code
             </button>
           </div>
-
         </div>
-        <div className='grid grid-cols-1'>
+
+        <div className='grid'>
           <img
-            className='size-contain p-4'
             src={sellTradeOnePic}
-            alt='sell/trade app'
+            alt='startup template'
+            width={500}
+            height={500}
+            className=' object-cover h-20 md:h-44 lg:h-full w-full '
           />
         </div>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 md:m-auto md:w-5/6  md:mt-4 gap-4  border-4   rounded-lg shadow-xl items-center m-2'>
-        <img
-          className='rounded-lg size-contain p-4'
-          src={Restourant}
-          alt='restourant app'
-        />
-        <div className='m-4'>
-          <p className='text-3xl border-b-4 w-fit m-auto'>Restaurant System</p>
-          <p className='pt-3 text-2xl'>{restaurantAppText}</p>
+    ),
+  },
+
+  {
+    title: 'Restaurant System',
+    content: (
+      <div>
+        <p className='text-neutral-200 text-xl md:text-xl font-normal mb-8'>
+          {restaurantAppText}
+        </p>
+        <div className='pb-10'>
           <button
             className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
             onClick={handleClick}
@@ -96,7 +94,37 @@ export default forwardRef(function Section3(props, ref) {
             Click to watch YouTube tutorial
           </button>
         </div>
+        <div className='grid '>
+          <img
+            src={Restourant}
+            alt='hero template'
+            width={500}
+            height={500}
+            className='rounded-lg object-cover h-20 md:h-full lg:h-full w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]'
+          />
+        </div>
       </div>
+    ),
+  },
+];
+
+export default forwardRef(function Section3(props, ref) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  ShowingDiv(ref, setIsVisible);
+
+  return (
+    <div
+      className={`section3 pb-20 m-auto md:grid md:grid-cols-1 md:w-5/6  text-white font-bold ${
+        isVisible ? 'visible' : ''
+      }`}
+      ref={ref}
+    >
+      
+     
+      
+      <div className='p-10'></div>
+      <Timeline data={data} />
     </div>
   );
 });
