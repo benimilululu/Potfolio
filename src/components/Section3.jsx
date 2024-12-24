@@ -41,16 +41,16 @@ const data = [
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
           <div>
             <button
-              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
+              className='mt-3 backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
               onClick={handleClickApp}
             >
               Click here to preview the website
             </button>
           </div>
 
-          <div>
+          <div className=''>
             <button
-              className='h-full mt-3 m-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
+              className='h-full mt-3 m-auto backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
               onClick={handleClickAppReactCode}
             >
               Github React Code
@@ -58,7 +58,7 @@ const data = [
           </div>
           <div>
             <button
-              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
+              className='mt-3 backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
               onClick={handleClickAppTSCode}
             >
               Github Refactored TypeScript Code
@@ -88,7 +88,7 @@ const data = [
         </p>
         <div className='pb-10'>
           <button
-            className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
+            className='mt-3 backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
             onClick={handleClick}
           >
             Click to watch YouTube tutorial
