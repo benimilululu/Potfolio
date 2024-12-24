@@ -6,7 +6,7 @@ export default function Section_1() {
     'Hi. I am Martin Jovanovic. Passionate Front-end React Developer based in Skopje, North Macedonia. 📍';
 
   return (
-    <div className='relative md:h-[55vh] cursor-default '>
+    <div className='relative md:h-[45vh] cursor-default '>
       <div className='grid grid-cols-1 md:absolute  md:grid-cols-2 h-full  rounded-full items-center'>
         <div className='md:flex md:justify-end md:mr-10 mt-5 md:mt-0 w-4/6  h-full m-auto'>
           <img
