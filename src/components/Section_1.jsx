@@ -3,7 +3,7 @@ import snowProfilePic from '../images/FA18D6FF-6285-43E5-A6CA-58F1375CCF02.jpeg'
 
 export default function Section_1() {
   const smallTextAboutMe =
-    'Hi. I am Martin Jovanovic. Passionate Front-end React Developer based in Skopje, North Macedonia. 📍';
+    'Hi. I am Martin Jovanovic. Passionate Front-end JavaScript Developer based in Skopje, North Macedonia. 📍';
 
   return (
     <div className='relative md:h-[45vh] cursor-default '>
@@ -20,8 +20,8 @@ export default function Section_1() {
             <div className='animated-title m-auto'>
               <div className='text-top'>
                 <div>
-                  <span className='text-white'>Front-End</span>
-                  <span className='mt-4'>JavaScript / React</span>
+                  <span className='text-white'>JavaScript </span>
+                  <span className='mt-4'>Software</span>
                 </div>
               </div>
               <div className='text-bottom'>
