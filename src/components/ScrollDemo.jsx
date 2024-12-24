@@ -1,7 +1,7 @@
 import React from 'react';
 import { ContainerScroll } from '../ui/container-scroll-animation.tsx';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 import { TiHtml5 } from 'react-icons/ti';
 import { FaCss3Alt } from 'react-icons/fa';
