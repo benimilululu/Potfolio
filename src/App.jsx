@@ -1,3 +1,4 @@
+
 import './App.css';
 import Section3 from './components/Section3';
 import Contact from './components/Contact';
@@ -7,9 +8,7 @@ import { Vortex } from './ui/vortex';
 import { useRef } from 'react';
 import Header from './components/Header';
 import Section_1 from './components/Section_1';
-import { HeroScrollDemo } from './components/ScrollDemo';
-
-
+import HeroScrollDemo from './components/ScrollDemo';
 
 function App() {
   const ref1 = useRef();
@@ -17,7 +16,6 @@ function App() {
   const contactRef = useRef();
 
   const HandleClick = () => {
-    console.log(ref1);
     ref1.current?.scrollIntoView({
       behavior: 'smooth',
       block: 'center',
@@ -25,12 +23,10 @@ function App() {
   };
 
   const HandleClickPortfolio = () => {
-    console.log(ref2);
     ref2.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const HandleClickContact = () => {
-    console.log(contactRef);
     contactRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -42,7 +38,7 @@ function App() {
             backgroundColor='black'
             particleCount={500}
             baseHue={120}
-            className='w-full h-full' 
+            className='w-full h-full'
           />
         </div>
 
@@ -53,7 +49,7 @@ function App() {
             ContactHandler={HandleClickContact}
           />
           <Section_1 />
-          <HeroScrollDemo />
+          <HeroScrollDemo ref={ref1} />
           <Section3 ref={ref2} />
           <Contact ref={contactRef} />
         </div>

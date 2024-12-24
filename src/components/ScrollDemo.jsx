@@ -1,4 +1,6 @@
 import React from 'react';
+import { forwardRef } from 'react';
+
 import { ContainerScroll } from '../ui/container-scroll-animation.tsx';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
 // import Image from 'next/image';
@@ -19,7 +21,7 @@ import Zoom from '@mui/material/Zoom';
 
 import { Meteors } from '../ui/meteors';
 
-export function HeroScrollDemo() {
+export default forwardRef(function HeroScrollDemo(props, ref) {
   const words = `Oxygen\ngets you high. In a catastrophic emergency, we're taking giant, panicked breaths. Suddenly you become euphoric, docile. You accept your fate. It's all right here. Emergency water landing, six hundred miles an hour. Blank faces, calm as Hindu cows
 `;
 
@@ -37,7 +39,7 @@ export function HeroScrollDemo() {
   );
 
   return (
-    <div className='flex flex-col overflow-hidden'>
+    <div className='flex flex-col overflow-hidden' ref={ref}>
       <ContainerScroll titleComponent={<></>}>
         <div className='h-full'>
           <div className='relative text-white'>
@@ -106,4 +108,4 @@ export function HeroScrollDemo() {
       </ContainerScroll>
     </div>
   );
-}
+})
