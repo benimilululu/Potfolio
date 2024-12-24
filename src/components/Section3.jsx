@@ -35,13 +35,13 @@ const data = [
     title: 'Buy / Sell & Chat-App',
     content: (
       <div>
-        <p className='text-neutral-200 text-xs md:text-xl font-normal mb-8'>
+        <p className='text-neutral-200 text-md md:text-xl font-semibold mb-8'>
           {topFindAppText}
         </p>
-        <div className='grid grid-cols-3'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
           <div>
             <button
-              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
               onClick={handleClickApp}
             >
               Click here to preview the website
@@ -50,7 +50,7 @@ const data = [
 
           <div>
             <button
-              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+              className='h-full mt-3 m-auto bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
               onClick={handleClickAppReactCode}
             >
               Github React Code
@@ -58,7 +58,7 @@ const data = [
           </div>
           <div>
             <button
-              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+              className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
               onClick={handleClickAppTSCode}
             >
               Github Refactored TypeScript Code
@@ -72,7 +72,7 @@ const data = [
             alt='startup template'
             width={500}
             height={500}
-            className=' object-cover h-20 md:h-44 lg:h-full w-full '
+            className='object-cover h-50 md:h-44 lg:h-full w-full rounded-lg shadow-lg'
           />
         </div>
       </div>
@@ -83,30 +83,31 @@ const data = [
     title: 'Restaurant System',
     content: (
       <div>
-        <p className='text-neutral-200 text-xl md:text-xl font-normal mb-8'>
+        <p className='text-neutral-200 text-md md:text-xl font-semibold mb-8'>
           {restaurantAppText}
         </p>
         <div className='pb-10'>
           <button
-            className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'
+            className='mt-3 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
             onClick={handleClick}
           >
             Click to watch YouTube tutorial
           </button>
         </div>
-        <div className='grid '>
+        <div className='grid'>
           <img
             src={Restourant}
             alt='hero template'
             width={500}
             height={500}
-            className='rounded-lg object-cover h-20 md:h-full lg:h-full w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]'
+            className='rounded-lg object-cover h-50 md:h-44 lg:h-full w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]'
           />
         </div>
       </div>
     ),
   },
 ];
+
 
 export default forwardRef(function Section3(props, ref) {
   const [isVisible, setIsVisible] = useState(false);
