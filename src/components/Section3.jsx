@@ -14,6 +14,9 @@ const topFindAppText = `A sleek web app for buying and selling, featuring real-t
 const restaurantAppText =
   'Restaurant System for GTA 5 roleplay where you can get order and the orders are going in the kitchen where the chef is viewing and making the order. This if Full Stack based application with back-end MySQL.';
 
+  const btnStyle =
+    'h-full mt-3 backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto border-2 border-white';
+
 const handleClick = () => {
   window.open('https://www.youtube.com/watch?v=cQR3nHvMDRE', '_blank');
 };
@@ -40,27 +43,18 @@ const data = [
         </p>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
           <div>
-            <button
-              className='mt-3 backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
-              onClick={handleClickApp}
-            >
+            <button className={btnStyle} onClick={handleClickApp}>
               Click here to preview the website
             </button>
           </div>
 
           <div className=''>
-            <button
-              className='h-full mt-3 m-auto backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
-              onClick={handleClickAppReactCode}
-            >
+            <button className={btnStyle} onClick={handleClickAppReactCode}>
               Github React Code
             </button>
           </div>
           <div>
-            <button
-              className='mt-3 backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
-              onClick={handleClickAppTSCode}
-            >
+            <button className={btnStyle} onClick={handleClickAppTSCode}>
               Github Refactored TypeScript Code
             </button>
           </div>
@@ -87,10 +81,7 @@ const data = [
           {restaurantAppText}
         </p>
         <div className='pb-10'>
-          <button
-            className='mt-3 backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto'
-            onClick={handleClick}
-          >
+          <button className={btnStyle} onClick={handleClick}>
             Click to watch YouTube tutorial
           </button>
         </div>
