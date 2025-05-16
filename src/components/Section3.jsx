@@ -48,6 +48,10 @@ const handleClickAppTSCode = () => {
   window.open('https://github.com/benimilululu/tsBuySell', '_blank');
 };
 
+const handleClickKonnecto = () => {
+  window.open('https://github.com/benimilululu/konnecto11', '_blank');
+};
+
 const data = [
   {
     title: 'Konnecto Chat App',
@@ -57,7 +61,7 @@ const data = [
           {chatAppText}
         </p>
         <div className='pb-10'>
-          <button className={btnStyle} onClick={handleClick}>
+          <button className={btnStyle} onClick={handleClickKonnecto}>
             Code on GitHub
           </button>
         </div>
