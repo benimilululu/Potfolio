@@ -11,6 +11,13 @@ import { ShowingDiv } from '../functions/showingDiv';
 
 import chatAppVideo from '../videos/chatAppVideo.mov';
 
+import blockchainExplorer from '../videos/blockchainexplorer.mov';
+
+const blockchainExplorerText = `Blockchain Wallet Insight Dashboard
+This interactive tool lets you explore any Ethereum wallet's activity in one simple view. Just connect your Web3 wallet or paste an address to instantly see: your current ETH balance with live USD conversion, also some ERC-20 token holdings, and the last five transactions with network fee details. Our smart calculator helps you estimate gas savings when moving funds between networks, potentially saving you money on every transfer. As a fun visual reward, your wallet's balance unlocks special tier imagery - watch your status grow from Bronze to Platinum as your holdings increase. Everything updates in real-time, giving you the clearest picture of your on-chain activity.
+
+`;
+
 const chatAppText = `Multilingual Chat App
 Chat in any language, receive in any language
 Our web app lets you communicate seamlessly across languages.
@@ -31,6 +38,10 @@ const restaurantAppText =
 
   const btnStyle =
     'h-full mt-3 backdrop-blur-xl bg-transparent md:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto border-2 border-white';
+
+    const handleClickBlockchain = () => {
+      window.open('https://blockchain-explorer-benimilululus-projects.vercel.app', '_blank');
+    }
 
 const handleClick = () => {
   window.open('https://www.youtube.com/watch?v=cQR3nHvMDRE', '_blank');
@@ -53,6 +64,32 @@ const handleClickKonnecto = () => {
 };
 
 const data = [
+  {
+    title: 'Blockchain mini Explorer',
+    content: (
+      <div>
+        <p style={{ whiteSpace: 'pre-line' }} className='text-neutral-200 text-md md:text-xl font-semibold mb-8 text-left'>
+          {blockchainExplorerText}
+        </p>
+        <div className='pb-10'>
+          <button className={btnStyle} onClick={handleClickBlockchain}>
+            Blockchain Explorer website
+          </button>
+        </div>
+        <div className='grid'>
+          <video
+            className='rounded-lg object-cover h-50 md:h-44 lg:h-full w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]'
+            controls
+            muted
+            src={blockchainExplorer}
+            width={300}
+            height={300}
+          /> 
+        </div>
+      </div>
+    ),
+  },
+
   {
     title: 'Konnecto Chat App',
     content: (
