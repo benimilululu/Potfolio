@@ -3,28 +3,14 @@ import { forwardRef } from 'react';
 
 import { ContainerScroll } from '../ui/container-scroll-animation.tsx';
 import { TextGenerateEffect } from '../ui/text-generate-effect';
-// import Image from 'next/image';
-
-import { TiHtml5 } from 'react-icons/ti';
-import { FaCss3Alt } from 'react-icons/fa';
-import { SiJavascript } from 'react-icons/si';
-import { FaReact } from 'react-icons/fa';
-import { TbBrandNextjs } from 'react-icons/tb';
-import { SiTailwindcss } from 'react-icons/si';
-import { SiTypescript } from 'react-icons/si';
-import { SiMysql } from 'react-icons/si';
-import { IoLogoFirebase } from 'react-icons/io5';
+import { techStack } from '../data/techStack';
 
 import Tooltip from '@mui/material/Tooltip';
 import Button from '@mui/material/Button';
 import Zoom from '@mui/material/Zoom';
+import SectionShell from './SectionShell';
 
-import { Meteors } from '../ui/meteors';
-
-export default forwardRef(function HeroScrollDemo(props, ref) {
-  const words = `Oxygen\ngets you high. In a catastrophic emergency, we're taking giant, panicked breaths. Suddenly you become euphoric, docile. You accept your fate. It's all right here. Emergency water landing, six hundred miles an hour. Blank faces, calm as Hindu cows
-`;
-
+export default forwardRef(function HeroScrollDemo({ id }, ref) {
   const TextAboutMe = `Front-end developer, thriving and specializing in JavaScript and React. Passionate for innovation and dedicated to continuous learning, my goal is to expand my skills and stay ahead of industry trends. Approaching every project with creativity, attention to detail and a drive for excellence. My journey as a front-end developer is fueled by the motivation of crafting meaningful user experiences.`;
 
   const IconTooltip = ({ title, children }) => (
@@ -34,78 +20,125 @@ export default forwardRef(function HeroScrollDemo(props, ref) {
         transition: Zoom,
       }}
     >
-      <Button>{children}</Button>
+      <Button sx={{ minWidth: 0, padding: 0, borderRadius: '1rem' }}>{children}</Button>
     </Tooltip>
   );
 
   return (
-    <div className='flex flex-col overflow-hidden' ref={ref}>
-      <ContainerScroll titleComponent={<></>}>
-        <div className='h-full'>
-          <div className='relative text-white'>
-            <div className='absolute inset-2 h-full w-full transform scale-[20] rounded-full blur-3xl' />
-            <div className='relative px-4 py-6 sm:py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-center items-center'>
-              <div className='flex flex-col items-center'>
-                <h1 className='text-xl sm:text-3xl md:text-5xl font-bold text-center mb-4'>
-                  Tech Stack
-                </h1>
-                <div className='grid grid-cols-5 sm:grid-cols-5 md:grid-cols-9 gap-4 md:gap-8'>
-                  <IconTooltip title='HTML5'>
-                    <TiHtml5 className='w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24 text-orange-600' />
-                  </IconTooltip>
+    <SectionShell
+      id={id}
+      ref={ref}
+      className='mt-4 pb-8 md:-mt-12'
+    >
+      <div className='md:hidden'>
+        <div className='glass overflow-hidden rounded-[28px] border border-white/10 px-4 py-5 shadow-glass'>
+          <div className='mb-5 text-center'>
+            <p className='mb-2 text-[11px] font-semibold uppercase tracking-[0.34em] text-accent/80'>
+              Modern Frontend Toolkit
+            </p>
+            <p className='mx-auto max-w-xs text-xs leading-6 text-white/58'>
+              Interfaces, styling systems, typed frontend code, and realtime product tooling.
+            </p>
+          </div>
 
-                  <IconTooltip title='CSS3'>
-                    <FaCss3Alt className='w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24 text-sky-600' />
-                  </IconTooltip>
+          <div className='grid grid-cols-3 gap-x-2 gap-y-4'>
+            {techStack.map((item) => {
+              const Icon = item.icon;
 
-                  <IconTooltip title='JavaScript'>
-                    <SiJavascript className='w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24 rounded-lg shadow-2xl text-yellow-300 ' />
-                  </IconTooltip>
+              return (
+                <IconTooltip key={item.name} title={item.name}>
+                  <div className='group flex flex-col items-center gap-2'>
+                    <span className='flex h-14 w-14 items-center justify-center rounded-2xl bg-transparent'>
+                      <Icon className='h-10 w-10' />
+                    </span>
+                    <span className='text-center text-[10px] font-medium leading-4 tracking-wide text-white/62'>
+                      {item.name}
+                    </span>
+                  </div>
+                </IconTooltip>
+              );
+            })}
+          </div>
 
-                  <IconTooltip title='React'>
-                    <FaReact className='w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24 text-sky-400' />
-                  </IconTooltip>
+          <div className='mt-6 rounded-[24px] border border-white/10 bg-[rgba(255,255,255,0.03)] px-4 py-5 text-center'>
+            <TextGenerateEffect
+              duration={1}
+              filter={false}
+              className='text-xs uppercase tracking-[0.32em] text-accent/90'
+              words='About Me'
+            />
+            <p className='mx-auto mt-3 max-w-xs text-xl font-semibold leading-tight tracking-tight text-white'>
+              Building thoughtful front-end experiences with strong visuals and clean structure.
+            </p>
+            <p className='mx-auto mt-4 max-w-sm text-sm leading-7 text-white/72'>
+              {TextAboutMe}
+            </p>
+          </div>
+        </div>
+      </div>
 
-                  <IconTooltip title='Next.js'>
-                    <TbBrandNextjs className='w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24 text-white' />
-                  </IconTooltip>
+      <div className='hidden md:block'>
+        <ContainerScroll titleComponent={<></>}>
+          <div className='h-full'>
+            <div className='relative h-full overflow-hidden rounded-2xl text-white'>
+              <div className='absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.18),transparent_34%)]' />
+              <div className='absolute inset-x-0 top-0 h-28 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),transparent)]' />
 
-                  <IconTooltip title='Tailwind CSS'>
-                    <SiTailwindcss className='w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24' />
-                  </IconTooltip>
+              <div className='relative flex h-full flex-col px-4 py-5 sm:px-6 sm:py-6 md:px-8 md:py-8'>
+                <div className='mx-auto w-full max-w-4xl rounded-[28px] border border-white/10 bg-[rgba(255,255,255,0.03)] px-4 py-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] md:px-6'>
+                  <div className='mb-4 flex flex-col items-center text-center'>
+                    <p className='mb-2 text-[11px] font-semibold uppercase tracking-[0.38em] text-accent/80'>
+                      Modern Frontend Toolkit
+                    </p>
+                    <p className='max-w-2xl text-sm text-white/55'>
+                      Interfaces, styling systems, typed frontend code, and realtime product tooling.
+                    </p>
+                  </div>
 
-                  <IconTooltip title='TypeScript'>
-                    <SiTypescript className='w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24 text-blue' />
-                  </IconTooltip>
+                  <div className='grid grid-cols-3 gap-3 sm:grid-cols-5 md:grid-cols-9 md:gap-4'>
+                    {techStack.map((item) => {
+                      const Icon = item.icon;
 
-                  <IconTooltip title='MySQL'>
-                    <SiMysql className='w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24' />
-                  </IconTooltip>
-
-                  <IconTooltip title='Firebase'>
-                    <IoLogoFirebase className='w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24 text-yellow-400' />
-                  </IconTooltip>
+                      return (
+                        <IconTooltip key={item.name} title={item.name}>
+                          <div className='group flex flex-col items-center gap-2'>
+                            <span className='flex h-16 w-16 items-center justify-center rounded-2xl bg-transparent transition duration-300 hover:bg-transparent hover:shadow-neon sm:h-[4.5rem] sm:w-[4.5rem] md:h-[5.25rem] md:w-[5.25rem]'>
+                              <Icon className={item.className} />
+                            </span>
+                            <span className='text-[10px] font-medium tracking-wide text-white/52 transition group-hover:text-white/80'>
+                              {item.name}
+                            </span>
+                          </div>
+                        </IconTooltip>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
 
-              <div className='flex flex-grow justify-center items-center text-center w-full  sm:mt-2 md:mt-20'>
-                <div className='text-white max-w-xs sm:max-w-2xl md:max-w-4xl px-4'>
-                  <TextGenerateEffect
-                    duration={2}
-                    filter={false}
-                    words='About Me'
-                  />
-                  <TextGenerateEffect
-                    duration={2}
-                    filter={false}
-                    words={TextAboutMe}
-                  />
+                <div className='mt-5 flex flex-grow items-center justify-center'>
+                  <div className='glass mx-auto flex w-full max-w-4xl flex-col rounded-[28px] border border-white/10 px-6 py-6 text-center shadow-glass md:px-10 md:py-8'>
+                    <TextGenerateEffect
+                      duration={1.4}
+                      filter={false}
+                      className='text-sm uppercase tracking-[0.34em] text-accent/90 md:text-base'
+                      words='About Me'
+                    />
+                    <p className='mx-auto mt-3 max-w-2xl text-balance text-2xl font-semibold tracking-tight text-white md:text-3xl'>
+                      Building thoughtful front-end experiences with strong visuals, structure, and product focus.
+                    </p>
+                    <TextGenerateEffect
+                      duration={1.1}
+                      filter={false}
+                      className='mx-auto max-w-3xl text-xs leading-7 text-white/72 md:text-base'
+                      words={TextAboutMe}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </ContainerScroll>
-    </div>
+        </ContainerScroll>
+      </div>
+    </SectionShell>
   );
 })

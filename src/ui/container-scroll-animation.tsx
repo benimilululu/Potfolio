@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion';
 
 export const ContainerScroll = ({
   titleComponent,
@@ -14,6 +15,7 @@ export const ContainerScroll = ({
     target: containerRef,
   });
   const [isMobile, setIsMobile] = React.useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   React.useEffect(() => {
     const checkMobile = () => {
@@ -27,24 +29,24 @@ export const ContainerScroll = ({
   }, []);
 
   const scaleDimensions = () => {
-    return isMobile ? [1, 1] : [1.05, 1];
+    return isMobile || prefersReducedMotion ? [1, 1] : [1.02, 1];
   };
 
   const rotate = useTransform(
     scrollYProgress,
     [0, 1],
-    isMobile ? [0, 0] : [20, 0]
+    isMobile || prefersReducedMotion ? [0, 0] : [6, 0]
   );
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
   const translate = useTransform(
     scrollYProgress,
     [0, 1],
-    isMobile ? [0, 0] : [0, -100]
+    isMobile || prefersReducedMotion ? [0, 0] : [0, -28]
   );
 
   return (
     <div
-      className='h-[60rem] md:h-[65rem] flex items-center justify-center relative p-2 md:p-20'
+      className='relative flex h-[64rem] items-center justify-center p-2 md:h-[70rem] md:p-14'
       ref={containerRef}
     >
       <div
@@ -92,12 +94,10 @@ export const Card = ({
       style={{
         rotateX: rotate,
         scale,
-        boxShadow:
-          '0 0 #0000004d, 0 9px 20px #0000004a, 0 10px 10px #00000042, 0 24px 20px #00000026, 0 49px 20px #0000000a, 0 33px 25px #00000003',
       }}
-      className='max-w-5xl -mt-40 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 backdrop-blur-md rounded-[30px] shadow-2xl '
+      className='glass max-w-5xl -mt-24 mx-auto h-[32rem] w-full rounded-[32px] border border-white/10 p-2 shadow-glass md:h-[40rem] md:p-5'
     >
-      <div className='h-full w-full overflow-hidden rounded-2xl md:rounded-3xl'>
+      <div className='h-full w-full overflow-hidden rounded-2xl bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.015))] md:rounded-3xl'>
         {children}
       </div>
     </motion.div>

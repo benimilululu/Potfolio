@@ -1,9 +1,23 @@
-import React, { useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 export default function Header(props) {
-  const classNamesForNavBar =
-    'cursor-pointer md:border-0 text-xl md:text-2xl border-r relative font-bold text-white md:after:bg-white md:after:absolute md:after:h-1 md:after:w-0 md:after:bottom-0 md:after:left-0 md:hover:after:w-full md:after:transition-all md:after:duration-300 md:font-bold md:text-white'; ;
+  const navItems = [
+    {
+      id: 'about',
+      label: 'About me',
+      onClick: props.AboutMeHandler,
+    },
+    {
+      id: 'portfolio',
+      label: 'Portfolio',
+      onClick: props.PortfolioHandler,
+    },
+    {
+      id: 'contact',
+      label: 'Contact',
+      onClick: props.ContactHandler,
+    },
+  ];
 
   const notifySuccess = () =>
     toast('Hi There.', {
@@ -11,27 +25,49 @@ export default function Header(props) {
     });
 
   return (
-    <div className=' h-full'>
+    <div className='h-full'>
       <Toaster position='top-right' reverseOrder={false} />
-      <header className='p-4 relative left-1/2 transform -translate-x-1/2 w-11/12  md:flow-root transition-all duration-300 ease-in-out'>
-        <div className='md:float-left'>
-          <p
-            className='cursor-pointer text-3xl md:text-2xl md:mt-4 font-bold text-white'
+      <header className='fixed inset-x-0 top-0 z-50 w-full border-b border-white/10 bg-[rgba(18,12,34,0.78)] px-4 py-3 shadow-glass backdrop-blur-xl transition-all duration-300 ease-in-out md:px-6'>
+        <div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
+          <button
+            type='button'
+            className='w-fit text-left text-2xl font-bold text-white transition hover:text-white/90 md:text-2xl'
             onClick={notifySuccess}
+            aria-label='Show greeting toast'
           >
             Martin.dev
-          </p>
-        </div>
-        <div className=' md:float-right md:flex md:space-x-4 grid grid-cols-3 mt-4'>
-          <p className={`${classNamesForNavBar} `} onClick={props.AboutMeHandler}>
-            About me
-          </p>
-          <p className={classNamesForNavBar} onClick={props.PortfolioHandler}>
-            Portfolio
-          </p>
-          <p className={`${classNamesForNavBar} border-r-0`} onClick={props.ContactHandler}>
-            Contact
-          </p>
+          </button>
+
+          <nav aria-label='Primary' className='w-full md:w-auto'>
+            <ul className='grid grid-cols-3 gap-2 md:flex md:items-center md:gap-3'>
+              {navItems.map((item) => {
+                const isActive = props.activeSection === item.id;
+
+                return (
+                  <li key={item.id}>
+                    <button
+                      type='button'
+                      onClick={item.onClick}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={`relative w-full rounded-full border px-4 py-2 text-sm font-semibold tracking-wide transition duration-300 md:text-base ${
+                        isActive
+                          ? 'border-accent/40 bg-accent/15 text-white shadow-neon'
+                          : 'border-white/10 bg-white/0 text-white/72 hover:border-white/20 hover:bg-white/5 hover:text-white'
+                      }`}
+                    >
+                      <span className='relative z-10'>{item.label}</span>
+                      <span
+                        aria-hidden='true'
+                        className={`pointer-events-none absolute inset-x-4 bottom-1 h-px bg-gradient-to-r from-transparent via-accent to-transparent transition-opacity duration-300 ${
+                          isActive ? 'opacity-100' : 'opacity-0'
+                        }`}
+                      />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
         </div>
       </header>
     </div>

@@ -1,37 +1,57 @@
+import snowProfilePic from '../images/FA18D6FF-6285-43E5-A6CA-58F1375CCF02.jpeg';
 
-import snowProfilePic from '../images/FA18D6FF-6285-43E5-A6CA-58F1375CCF02.jpeg'
-
-export default function Section_1() {
+export default function Section_1({ onPortfolioClick, onContactClick }) {
+  const eyebrow = 'Frontend Engineer';
   const smallTextAboutMe =
     'Hi. I am Martin Jovanovic. Passionate Front-end JavaScript Developer.';
 
   return (
-    <div className='relative md:h-[45vh] cursor-default '>
-      <div className='grid grid-cols-1 md:absolute  md:grid-cols-2 h-full  rounded-full items-center'>
-        <div className='md:flex md:justify-end md:mr-10 mt-5 md:mt-0 w-4/6  h-full m-auto'>
-          <img
-            className='shape bg-transparent rounded-full object-cover  m-auto'
-            src={snowProfilePic}
-            alt='profile pic'
-          ></img>
-        </div>
-        <div className='md:flex md:justify-start text-4xl md:text-5xl pt-4 w-fit md:w-3/6 font-serif font-bold text-white mt-5 pb-10 md:mr-10'>
-          <div>
-            <div className='animated-title m-auto'>
-              <div className='text-top'>
-                <div>
-                  <span className='text-white'>JavaScript </span>
-                  <span className='mt-4'>Software</span>
-                </div>
-              </div>
-              <div className='text-bottom'>
-                <div>Developer</div>
-              </div>
+    <section className='relative mx-auto w-[92%] max-w-6xl px-2 pb-0 pt-6 md:px-0 md:pb-2 md:pt-10'>
+      <div className='glass noise rounded-[36px] border border-white/10 px-5 py-8 shadow-glass md:px-10 md:py-12'>
+        <div className='grid items-center gap-10 md:grid-cols-[1.05fr_0.95fr]'>
+          <div className='order-2 text-left md:order-1'>
+            <p className='neon-text mb-4 text-sm font-semibold uppercase tracking-[0.32em] text-accent/90'>
+              {eyebrow}
+            </p>
+
+            <h1 className='text-4xl font-semibold leading-[0.96] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl lg:text-7xl'>
+              Building immersive interfaces with clean motion and sharp front-end systems.
+            </h1>
+
+            <p className='mt-8 max-w-xl text-base leading-8 text-muted sm:text-lg'>
+              {smallTextAboutMe}
+            </p>
+
+            <div className='mt-8 flex flex-col gap-3 sm:flex-row'>
+              <button
+                type='button'
+                onClick={onPortfolioClick}
+                className='rounded-full border border-accent/40 bg-accent/15 px-6 py-3 text-sm font-semibold text-white shadow-neon transition hover:bg-accent/20 hover:shadow-neon-lg'
+              >
+                View Portfolio
+              </button>
+
+              <button
+                type='button'
+                onClick={onContactClick}
+                className='glass rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-accent/30 hover:bg-white/10'
+              >
+                Contact Me
+              </button>
             </div>
-            <p className='text-2xl  static'>{smallTextAboutMe}</p>
+          </div>
+
+          <div className='order-1 flex justify-center md:order-2 md:justify-end'>
+            <div className='neon-border relative flex h-[310px] w-[310px] items-center justify-center rounded-[38px] border border-white/10 bg-transparent p-5 sm:h-[360px] sm:w-[360px] md:h-[410px] md:w-[410px]'>
+              <img
+                className='shape bg-transparent rounded-full object-cover m-auto'
+                src={snowProfilePic}
+                alt='Martin Jovanovic portrait'
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
